@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "zombie-runner-jsm",
+    "public": "Build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
