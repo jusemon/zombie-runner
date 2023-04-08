@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8385522542919014243}
   - component: {fileID: 3893651220355627980}
-  - component: {fileID: 7571605833335000545}
+  - component: {fileID: 3783789722551431271}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -370,7 +370,7 @@ Transform:
   m_Children:
   - {fileID: 8426612692127547944}
   - {fileID: 5032843089961660798}
-  - {fileID: 2207117997284307386}
+  - {fileID: 5941507844117480230}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -389,8 +389,8 @@ MonoBehaviour:
   FPSCamera: {fileID: 0}
   range: 100
   damage: 20
-  muzzleFlash: {fileID: 8493112783580365168}
---- !u!111 &7571605833335000545
+  muzzleFlash: {fileID: 5630017760056190057}
+--- !u!111 &3783789722551431271
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,89 +400,92 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 1988171045948695719, guid: 0fa47d6397f39a04880d398567bde5c3, type: 3}
+  - {fileID: -2653128793843731477, guid: 0fa47d6397f39a04880d398567bde5c3, type: 3}
+  - {fileID: -8629809229752072323, guid: 0fa47d6397f39a04880d398567bde5c3, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1001 &8119192735973427323
+--- !u!1001 &8937872755692811573
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8385522542919014243}
     m_Modifications:
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8779601068961564743, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+    - target: {fileID: 3360542172024696037, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_Name
-      value: Particle System
+      value: Muzzle Flash
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 976f8283447e61a4e9d3f46c8ddbfdb3, type: 3}
---- !u!4 &2207117997284307386 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+--- !u!4 &5941507844117480230 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7929828326303103425, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+  m_CorrespondingSourceObject: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
     type: 3}
-  m_PrefabInstance: {fileID: 8119192735973427323}
+  m_PrefabInstance: {fileID: 8937872755692811573}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &8493112783580365168 stripped
+--- !u!198 &5630017760056190057 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 392010884991666443, guid: 976f8283447e61a4e9d3f46c8ddbfdb3,
+  m_CorrespondingSourceObject: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813,
     type: 3}
-  m_PrefabInstance: {fileID: 8119192735973427323}
+  m_PrefabInstance: {fileID: 8937872755692811573}
   m_PrefabAsset: {fileID: 0}

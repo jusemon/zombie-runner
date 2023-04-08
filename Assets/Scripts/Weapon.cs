@@ -10,6 +10,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 20;
     [SerializeField] ParticleSystem muzzleFlash;
 
+    Animation animations;
+
+    void Start()
+    {
+        animations = GetComponent<Animation>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -17,16 +24,29 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
     }
+
 
     private void Shoot()
     {
+        if(animations.isPlaying) return;
         PlayMuzzleFlash();
         ProcessRaycast();
     }
 
+    private void Reload()
+    {
+        animations.Play("PistolArmature|Reload");
+    }
+
     private void PlayMuzzleFlash()
     {
+        animations.Play("PistolArmature|Fire");
         muzzleFlash.Play();
     }
 
