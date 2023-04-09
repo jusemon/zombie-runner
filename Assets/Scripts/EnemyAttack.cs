@@ -15,7 +15,11 @@ public class EnemyAttack : MonoBehaviour
     public void AttackHitEvent()
     {
         if (playerHealth == null) return;
-        Debug.Log(playerHealth.transform.name + " hitted");
-        playerHealth.TakeDamage(damage); 
+        playerHealth.TakeDamage(damage);
+    }
+
+    public void OnDamageTaken()
+    {
+        Debug.Log("Enemy has been atacked");
     }
 }
