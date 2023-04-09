@@ -5,17 +5,17 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] float damage = 40f;
-    PlayerHealth target;
+    PlayerHealth playerHealth;
 
     void Start()
     {
-        target = FindObjectOfType<PlayerHealth>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     public void AttackHitEvent()
     {
-        if (target == null) return;
-        Debug.Log(target.transform.name + " hitted");
-        target.TakeDamage(damage); 
+        if (playerHealth == null) return;
+        Debug.Log(playerHealth.transform.name + " hitted");
+        playerHealth.TakeDamage(damage); 
     }
 }
