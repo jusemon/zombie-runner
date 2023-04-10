@@ -13,10 +13,17 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
 
     Animation animations;
+    Dictionary<string, string> animationsNames;
 
     void Start()
     {
+        animationsNames = new Dictionary<string, string>();
         animations = GetComponent<Animation>();
+        foreach (AnimationState clip in animations)
+        {
+            Debug.Log("Added animation " + clip.name + " as " + clip.name.Split('|')[1]);
+            animationsNames.Add(clip.name.Split('|')[1], clip.name);
+        }
     }
 
     // Update is called once per frame
@@ -44,12 +51,12 @@ public class Weapon : MonoBehaviour
 
     private void Reload()
     {
-        animations.Play("PistolArmature|Reload");
+        PlayAnimation("Reload");
     }
 
     private void PlayMuzzleFlash()
     {
-        animations.Play("PistolArmature|Fire");
+        var played = PlayAnimation("Fire") || PlayAnimation("FireWBullet");
         muzzleFlash.Play();
     }
 
@@ -74,5 +81,12 @@ public class Weapon : MonoBehaviour
             var impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impact, 0.1f);
         }
+    }
+
+    private bool PlayAnimation(string shortName)
+    {
+        if (!animationsNames.ContainsKey(shortName)) return false;
+        animations.Play(animationsNames[shortName]);
+        return true;
     }
 }

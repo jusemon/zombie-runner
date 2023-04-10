@@ -2414,10 +2414,20 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 827021718}
-    - target: {fileID: 8520750778343689690, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    - target: {fileID: 4113945684427314403, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
-      propertyPath: zoomInSensitivity
-      value: 0.75
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010749812491200380, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010749812491200380, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: damage
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
