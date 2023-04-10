@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 11400004}
   - component: {fileID: 2825197367737835685}
   - component: {fileID: 3259879631537782086}
-  - component: {fileID: 8520750778343689690}
   - component: {fileID: 1117994318487752028}
   m_Layer: 0
   m_Name: Player
@@ -331,23 +330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
---- !u!114 &8520750778343689690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc93f256ab54853428913c87e2ef8e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsCamera: {fileID: 2000000}
-  zoomedOutFOV: 60
-  zoomedInFOV: 30
-  zomOutSentitivity: 2
-  zoomInSensitivity: 0.75
 --- !u!114 &1117994318487752028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 2455066707132865826, guid: 9aa5d6365cb423c449da53ab21ccfacd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2979683680516736920, guid: 9aa5d6365cb423c449da53ab21ccfacd,
         type: 3}
@@ -521,6 +503,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490081272722790204, guid: 9aa5d6365cb423c449da53ab21ccfacd,
+        type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 6490081272722790204, guid: 9aa5d6365cb423c449da53ab21ccfacd,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 11400004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aa5d6365cb423c449da53ab21ccfacd, type: 3}
 --- !u!4 &2937008567281699854 stripped
@@ -546,6 +538,16 @@ PrefabInstance:
       propertyPath: FPSCamera
       value: 
       objectReference: {fileID: 2000000}
+    - target: {fileID: 4492430881394939664, guid: a2a9e96d6d092e54286e96411a70c375,
+        type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 4492430881394939664, guid: a2a9e96d6d092e54286e96411a70c375,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 11400004}
     - target: {fileID: 8193050422812150851, guid: a2a9e96d6d092e54286e96411a70c375,
         type: 3}
       propertyPath: m_RootOrder
@@ -609,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 8860937132574070521, guid: a2a9e96d6d092e54286e96411a70c375,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a9e96d6d092e54286e96411a70c375, type: 3}
@@ -691,6 +693,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8642805650957918380, guid: 13dafacc7b02d194f9d34217daa1dd98,
+        type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 8642805650957918380, guid: 13dafacc7b02d194f9d34217daa1dd98,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 11400004}
     - target: {fileID: 9157098971612024281, guid: 13dafacc7b02d194f9d34217daa1dd98,
         type: 3}
       propertyPath: m_Name

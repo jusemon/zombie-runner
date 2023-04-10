@@ -3,17 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class WeaponCharacteristics
+{
+    public bool IsAutomatic = false;
+    public float Range = 100f;
+    public float Damage = 20f;
+    public float TimeBetweenShots = 0.5f;
+}
+
 public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera FPSCamera;
-    [SerializeField] float range = 100;
-    [SerializeField] float damage = 20;
+    [SerializeField] Ammo ammoSlot;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
-    [SerializeField] Ammo ammoSlot;
+    [SerializeField] WeaponCharacteristics characteristics = new WeaponCharacteristics();
 
     Animation animations;
     Dictionary<string, string> animationsNames;
+    bool canShoot = true;
+    bool continueShooting = false;
 
     void Start()
     {
@@ -29,9 +39,13 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if ((Input.GetButtonDown("Fire1") || (characteristics.IsAutomatic && continueShooting)) && canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            StopShooting();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -41,12 +55,25 @@ public class Weapon : MonoBehaviour
     }
 
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
-        if (ammoSlot.CurrentAmmo == 0 || animations.isPlaying) return;
-        PlayMuzzleFlash();
-        ProcessRaycast();
-        ammoSlot.ReduceCurrentAmmo();
+        canShoot = false;
+        continueShooting = true;
+        if (ammoSlot.CurrentAmmo > 0)
+        {
+            if (!PlayAnimation("Fire")) PlayAnimation("FireWBullet");
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            ammoSlot.ReduceCurrentAmmo();
+        }
+        yield return new WaitForSeconds(characteristics.TimeBetweenShots);
+        canShoot = true;
+    }
+
+    private void StopShooting()
+    {
+        continueShooting = false;
+
     }
 
     private void Reload()
@@ -56,20 +83,19 @@ public class Weapon : MonoBehaviour
 
     private void PlayMuzzleFlash()
     {
-        var played = PlayAnimation("Fire") || PlayAnimation("FireWBullet");
         muzzleFlash.Play();
     }
 
     private void ProcessRaycast()
     {
-        if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out RaycastHit hit, range))
+        if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out RaycastHit hit, characteristics.Range))
         {
             Debug.Log($"Hit {hit.transform.name}");
             CreateHitImpact(hit);
             var target = hit.transform.GetComponent<EnemyHealth>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage(characteristics.Damage);
             }
         }
     }
@@ -86,6 +112,7 @@ public class Weapon : MonoBehaviour
     private bool PlayAnimation(string shortName)
     {
         if (!animationsNames.ContainsKey(shortName)) return false;
+        if (animations.isPlaying) animations.Stop();
         animations.Play(animationsNames[shortName]);
         return true;
     }

@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 8193050422812150851}
   - component: {fileID: 6516464002925211173}
   - component: {fileID: -9191889450805423974}
+  - component: {fileID: 4492430881394939664}
   m_Layer: 0
   m_Name: P90
   m_TagString: Untagged
@@ -337,12 +338,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 0}
-  range: 100
-  damage: 20
+  ammoSlot: {fileID: 0}
   muzzleFlash: {fileID: 8260346397570472236}
   hitEffect: {fileID: 1112058545898506733, guid: 5f38b666e5722cd4091bcc8da1a2a2a8,
     type: 3}
-  ammoSlot: {fileID: 0}
+  characteristics:
+    IsAutomatic: 1
+    Range: 80
+    Damage: 10
+    TimeBetweenShots: 0.1
+--- !u!114 &4492430881394939664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860937132574070521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc93f256ab54853428913c87e2ef8e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 0}
+  fpsController: {fileID: 0}
+  zoomedOutFOV: 60
+  zoomedInFOV: 30
+  zomOutSentitivity: 2
+  zoomInSensitivity: 0.75
 --- !u!1001 &4650742805191297136
 PrefabInstance:
   m_ObjectHideFlags: 0
