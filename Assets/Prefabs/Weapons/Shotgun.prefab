@@ -135,7 +135,7 @@ MonoBehaviour:
     type: 3}
   characteristics:
     IsAutomatic: 0
-    Range: 40
+    Range: 30
     Damage: 50
     TimeBetweenShots: 1.5
 --- !u!114 &6490081272722790204

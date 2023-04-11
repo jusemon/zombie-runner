@@ -406,13 +406,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 0}
-  range: 80
-  damage: 20
-  timeBetweenShots: 0.5
+  ammoSlot: {fileID: 0}
   muzzleFlash: {fileID: 5630017760056190057}
   hitEffect: {fileID: 1112058545898506733, guid: 5f38b666e5722cd4091bcc8da1a2a2a8,
     type: 3}
-  ammoSlot: {fileID: 0}
+  characteristics:
+    IsAutomatic: 0
+    Range: 50
+    Damage: 20
+    TimeBetweenShots: 0.3
 --- !u!114 &8642805650957918380
 MonoBehaviour:
   m_ObjectHideFlags: 0
