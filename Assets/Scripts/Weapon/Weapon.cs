@@ -3,19 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class WeaponCharacteristics
-{
-    public bool IsAutomatic = false;
-    public float Range = 100f;
-    public float Damage = 20f;
-    public float TimeBetweenShots = 0.5f;
-}
-
 public class Weapon : MonoBehaviour
 {
+    [Serializable]
+    private class WeaponCharacteristics
+    {
+        public bool IsAutomatic = false;
+        public float Range = 100f;
+        public float Damage = 20f;
+        public float TimeBetweenShots = 0.5f;
+    }
+
     [SerializeField] Camera FPSCamera;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] WeaponCharacteristics characteristics = new WeaponCharacteristics();
@@ -24,6 +25,12 @@ public class Weapon : MonoBehaviour
     Dictionary<string, string> animationsNames;
     bool canShoot = true;
     bool continueShooting = false;
+
+    void OnEnable()
+    {
+        canShoot = true;
+        continueShooting = false;
+    }
 
     void Start()
     {
@@ -59,12 +66,12 @@ public class Weapon : MonoBehaviour
     {
         canShoot = false;
         continueShooting = true;
-        if (ammoSlot.CurrentAmmo > 0)
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             if (!PlayAnimation("Fire")) PlayAnimation("FireWBullet");
             PlayMuzzleFlash();
             ProcessRaycast();
-            ammoSlot.ReduceCurrentAmmo();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
         }
         yield return new WaitForSeconds(characteristics.TimeBetweenShots);
         canShoot = true;
