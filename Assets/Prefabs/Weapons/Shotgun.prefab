@@ -109,7 +109,7 @@ Animation:
   m_Animation: {fileID: -7731120788715197594, guid: eced6a8e09f84d34f9d37caf2fa58670,
     type: 3}
   m_Animations:
-  - {fileID: -7731120788715197594, guid: eced6a8e09f84d34f9d37caf2fa58670, type: 3}
+  - {fileID: 2995620958457644241, guid: eced6a8e09f84d34f9d37caf2fa58670, type: 3}
   - {fileID: 7130682805257073550, guid: eced6a8e09f84d34f9d37caf2fa58670, type: 3}
   - {fileID: -8429995278180102365, guid: eced6a8e09f84d34f9d37caf2fa58670, type: 3}
   m_WrapMode: 0

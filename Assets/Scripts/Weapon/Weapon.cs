@@ -70,7 +70,7 @@ public class Weapon : MonoBehaviour
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             Debug.Log("Shooting");
-            if (!PlayAnimation("Fire")) PlayAnimation("FireWBullet");
+            PlayAnimation("Fire");
             PlayMuzzleFlash();
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo(ammoType);

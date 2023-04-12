@@ -8,13 +8,16 @@ ModelImporter:
     second: ShotgunArmature|FireWBullet
   - first:
       74: 7130682805257073550
-    second: ShotgunArmature|FireWOBullet
+    second: ShotgunArmature|Slide
   - first:
       74: -8429995278180102365
     second: ShotgunArmature|Reload
   - first:
       74: -2388186965046238939
     second: ShotgunArmature|FireWBullet (1)
+  - first:
+      74: 2995620958457644241
+    second: ShotgunArmature|Fire
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -74,7 +77,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ShotgunArmature|FireWBullet
+      name: ShotgunArmature|Fire
       takeName: ShotgunArmature|FireWBullet
       internalID: 0
       firstFrame: 0
@@ -103,7 +106,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ShotgunArmature|FireWOBullet
+      name: ShotgunArmature|Slide
       takeName: ShotgunArmature|FireWOBullet
       internalID: 0
       firstFrame: 0
