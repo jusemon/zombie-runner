@@ -50,7 +50,8 @@ public class Weapon : MonoBehaviour
         {
             StartCoroutine(Shoot());
         }
-        else if (Input.GetButtonUp("Fire1"))
+       
+        if (Input.GetButtonUp("Fire1"))
         {
             StopShooting();
         }
@@ -68,6 +69,7 @@ public class Weapon : MonoBehaviour
         continueShooting = true;
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
+            Debug.Log("Shooting");
             if (!PlayAnimation("Fire")) PlayAnimation("FireWBullet");
             PlayMuzzleFlash();
             ProcessRaycast();
@@ -79,6 +81,7 @@ public class Weapon : MonoBehaviour
 
     private void StopShooting()
     {
+        Debug.Log("Stop shooting");
         continueShooting = false;
 
     }
