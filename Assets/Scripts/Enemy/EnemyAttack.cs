@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour, IAttackHitEvent
+public class EnemyAttack : MonoBehaviour, EnemyEventManager.IAttackHitEvent
 {
     [SerializeField] float damage = 40f;
     PlayerHealth playerHealth;

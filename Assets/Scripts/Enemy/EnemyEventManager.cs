@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public interface IAttackHitEvent
-{
-    void AttackHitEvent();
-}
-
 public class EnemyEventManager : MonoBehaviour
 {
+    public interface IAttackHitEvent
+    {
+        void AttackHitEvent();
+    }
+
     private IAttackHitEvent[] components;
 
     private void Start()
