@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -19,6 +20,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] WeaponCharacteristics characteristics = new WeaponCharacteristics();
 
     Animation animations;
@@ -46,6 +48,8 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayAmmo();
+
         if ((Input.GetButtonDown("Fire1") || (characteristics.IsAutomatic && continueShooting)) && canShoot)
         {
             StartCoroutine(Shoot());
@@ -62,6 +66,10 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    private void DisplayAmmo()
+    {
+        ammoText.SetText(ammoSlot.GetCurrentAmmo(ammoType).ToString("000"));
+    }
 
     private IEnumerator Shoot()
     {
@@ -100,7 +108,6 @@ public class Weapon : MonoBehaviour
     {
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out RaycastHit hit, characteristics.Range))
         {
-            Debug.Log($"Hit {hit.transform.name}");
             CreateHitImpact(hit);
             var target = hit.transform.GetComponent<EnemyHealth>();
             if (target != null)

@@ -7,10 +7,10 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
 
-    [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5;
     [SerializeField] float turnSpeed = 100;
 
+    Transform target;
     Animator animator;
     NavMeshAgent navMeshAgent;
     private EnemyHealth health;
@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
 
     // Update is called once per frame
