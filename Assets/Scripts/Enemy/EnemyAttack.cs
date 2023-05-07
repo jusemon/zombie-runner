@@ -16,9 +16,4 @@ public class EnemyAttack : MonoBehaviour, EnemyEventManager.IAttackHitEvent
         playerHealth.TakeDamage(damage);
         playerHealth.GetComponent<DisplayDamage>().ShowDamageImpact();
     }
-
-    public void OnDamageTaken()
-    {
-        Debug.Log("Enemy has been atacked");
-    }
 }
